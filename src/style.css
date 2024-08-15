@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    
+    /* Montserrat-Regular */
+    @font-face {
+        font-family: 'Montserrat Regular';
+        font-weight: 400;
+        src: url(fonts/Montserrat-Regular.woff2), local(woff2);
+        font-display: swap;       
+    }
+    
+    /* Montserrat-Regular */
+    @font-face {
+        font-family: 'Sofia Regular';
+        font-weight: 400;
+        src: url(fonts/Sofia-Regular.woff2), local(woff2);
+        font-display: swap;
+    }
+}
+
+@layer components {
+
+    /* === defaults === */
+
+
+    /* === defaults === */
+
+    /* input */
+    .input:focus, .input:focus-within {
+        outline: unset !important;
+        @apply !outline-0 !outline-none !outline-offset-0; 
+    }
+    .input input:focus {
+        outline: unset;
+        @apply outline-offset-0; 
+    }
+    
+    .input:focus, .input:focus-within {
+        @apply ring-2 ring-offset-2 bg-base-100;
+    }
+
+    input::placeholder {
+        @apply text-inherit;
+    }
+    
+    .input {
+        @apply ring-0 ring-offset-0 transition-shadow;
+    }
+
+    .input-primary {
+        @apply ring-primary;
+    }
+    .input-secondary {
+        @apply ring-secondary;
+    }
+    /* input */
+
+    .text-rainbown {
+        @apply bg-gradient-to-tl from-green-400 via-orange-500 to-violet-400 bg-clip-text text-transparent;
+    }
+   
+}
+
+@layer utilities {
+    .svg-draw-animation > path {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+        @apply animate-[drawersvg_15s_ease-in-out_infinite_alternate-reverse];
+    }
+
+    .svg-draw-animation.delay_one > path {
+        @apply animate-delay-[1.5s];
+    }
+
+    .svg-draw-animation.delay_two > path {
+        @apply animate-delay-[2.5s];
+    }
+
+    .svg-draw-animation.delay_three > path {
+        @apply animate-delay-[3.5s];
+    }
+}
